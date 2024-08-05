@@ -14,6 +14,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/authCode", (req, res) => {
+  const { code } = req.query;
+  res.send(`Codigo de autenticacion: ${code}`);
+});
+
 app.post("/filter-leads", async (req, res) => {
   const { role, industry, country, cnae } = req.body;
 
